@@ -1,0 +1,15 @@
+.search{
+    .radio{
+        display: flex;
+        flex-direction: column;
+        color: $secondary;
+        p{
+            font-weight: 700;
+            align-self: flex-start;
+            margin: 4px 0;
+        }
+        .search_radio{
+            align-self: flex-start;
+        }
+    }
+}

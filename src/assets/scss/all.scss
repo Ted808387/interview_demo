@@ -1,0 +1,16 @@
+// base
+@import './base/normalize.scss';
+@import './base/variables.scss';
+
+// pages
+@import './pages/app.scss';
+@import './pages/home.scss';
+@import './pages/products.scss';
+@import './pages/aboutus.scss';
+
+// components
+@import './components/wave.scss';
+@import './components/changesearch.scss';
+@import './components/carlist.scss';
+
+@import './base/media.scss';

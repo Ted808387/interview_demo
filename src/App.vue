@@ -1,30 +1,38 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <Wave/>
+  <nav class="navbar">
+    <router-link to="/">首頁</router-link>
+    <router-link to="/products">產品目錄</router-link>
+    <router-link to="/aboutus">關於我們</router-link>
+    <select name="theme" v-model="theme">
+      <option value="1">主題一</option>
+      <option value="2">主題二</option>
+      <option value="3">主題三</option>
+    </select>
   </nav>
   <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Wave from './components/Wave.vue'
+import changetheme from '@/utils/theme.js'
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  components: {
+    Wave
+  },
+  data(){
+    return {
+      theme: '1'
     }
+  },
+  beforeUpdate(){
+    this.$theme = this.theme
+    changetheme(this.$theme)
   }
 }
+</script>
+
+<style lang="scss">
+  @import './assets/scss/all.scss';
 </style>
